@@ -1,0 +1,26 @@
+ #include<stdio.h>
+  2
+  3     int sumarry(int arr[],int n)
+  4  {
+  5
+  6         int i ;
+  7         int sum=0;
+  8         for(i=0;i<n;i++)
+  9  {
+ 10             sum=sum+arr[i];
+ 11 }
+ 12 return sum;
+ 13  }
+ 14 void main()
+ 15 {
+ 16     int sum, n,i,arr[50];
+ 17     printf("Enter number of elements : ");
+ 18     scanf("%d",&n);
+ 19     printf("Enter the elements : ");
+ 20     for(i=0;i<n;i++)
+ 21  {
+ 22         scanf("%d",&arr[i]);
+ 23  }
+ 24      sum=sumarry(arr,n);
+ 25     printf("ANS=%d",sum);
+ 26 }
