@@ -1,0 +1,10 @@
+ #include<stdio.h>
+  2 void main()
+  3 {
+  4     int l,b,area;
+  5     printf("Enter the length ");
+  6     scanf("%d",l);
+  7     printf("Enter the breadth  ");
+  8     scanf("%d",b);
+  9     area=l*b;
+ 10     printf("ANS=%d",area);
