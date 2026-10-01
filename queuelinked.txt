@@ -1,0 +1,121 @@
+ #include<stdio.h>
+ #include<stdlib.h>
+   struct Node
+   {
+       int data;
+       struct Node*next;
+   };
+   int main()
+   {
+      struct Node*front=NULL;
+      struct Node*rear=NULL;
+      struct Node*newNode,*temp;
+      int choice,value;
+ 
+      while(1)
+     {
+          printf("\nQueue using LinkedList\n");
+          printf("1.Enqueue\n2.Dequeue\n3.Display\n4.Exit\n");
+          printf("Enter your choices: ");
+          scanf("%d",&choice);
+          switch (choice)
+          {
+              case 1:
+                  printf("Enter value to enqueue:");
+                  scanf("%d",&value);
+                 newNode=(struct Node*)malloc(sizeof(struct Node));
+                  if(newNode==NULL)
+                  {
+                      break;
+                  }
+                      newNode->data=value;
+                     newNode->next=NULL;
+                      if(rear==NULL)
+                      {
+                          front=rear=newNode;
+                      }
+                      else
+                      {
+                          rear->next=newNode;
+                          rear=newNode;
+                      }
+                      printf("%d enqueue to queue\n",value);
+                        break;
+                      case 2:
+                      if(front==NULL)
+                      {
+                          printf("Queue underflow\n");
+                         break;
+                      }
+                      temp=front;
+                     printf("%d dequeue from queue\n",front->data);
+                      front=front->next;
+                      if(front->next)
+                          rear=NULL;
+                      free(temp);
+                      break;
+                      case 3:
+                      if(front==NULL)
+                      {
+                          printf("queue is empty\n");
+                          break;
+                      }
+                      temp=front;
+                      printf("queue element:");
+                      while(temp!=NULL)
+                      {
+                          printf("%d->",temp->data);
+                          temp=temp->next;
+                      }
+                     printf("NUll\n");
+                     break;
+                      case 4:
+                     exit(0);
+                      default:
+                      printf("invalid choice\n");
+                  }
+        }
+  return 0;
+  }
+
+output:
+Queue using LinkedList
+1.Enqueue
+2.Dequeue
+3.Display
+4.Exit
+Enter your choices: 3
+queue element:11->12->13->14->NUll
+
+Queue using LinkedList
+1.Enqueue
+2.Dequeue
+3.Display
+4.Exit
+Enter your choices: 2
+11 dequeue from queue
+
+Queue using LinkedList
+1.Enqueue
+2.Dequeue
+3.Display
+4.Exit
+Enter your choices: 2
+12 dequeue from queue
+
+Queue using LinkedList
+1.Enqueue
+2.Dequeue
+3.Display
+4.Exit
+Enter your choices: 3
+queue element:13->14->NUll
+
+Queue using LinkedList
+1.Enqueue
+2.Dequeue
+3.Display
+4.Exit
+Enter your choices: 4
+
+
